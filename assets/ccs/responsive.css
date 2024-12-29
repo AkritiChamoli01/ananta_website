@@ -1,0 +1,77 @@
+@media only screen and (max-width: 991px) {
+   .container{
+    max-width: 100% !important;
+    padding: 0 70px !important;
+   }
+   .main-services-part {
+    padding: 40px;
+    background-color: #333F51;
+}
+  }
+@media only screen and (max-width: 767px) {
+
+   .container{
+    max-width: 100% !important;
+    padding: 0 40px !important;
+   }
+   .custom-flex{
+    flex-direction:column;
+    gap: 40px;
+  }
+  .custom-flex-left, .custom-flex-right{
+    width: 100%;
+  }
+  .order-rigth{
+    order: 1;
+  }
+
+   .width-custom-70{
+    width: 100%;
+  }
+  /* .main-services */
+  
+   .main-services-part {
+    padding: 30px;
+    background-color: #333F51;
+}
+   .main-services-body{
+    gap: 20px;
+   }
+
+   /* home-hero  */
+
+   /* contact */
+   .contact-section-body{
+    flex-direction: column;
+    
+   }
+   .contact-details{
+    width: 100%;
+    padding-bottom: 40px;
+   }
+   .contact-form{
+    width: 100%;
+   }
+  }
+@media only screen and (max-width: 576px) {
+   .container{
+    max-width: 100% !important;
+    padding: 0 20px !important;
+   }
+   /* main-services */
+   .main-services-body{
+    grid-template-columns: auto;
+   }
+   /* contact */
+   .contact-form{
+    padding: 20px;
+   }
+   /* why choose us  */
+   .choose-list-body{
+    gap: 30px;
+   }
+   .choose-list{
+    flex-direction: column;
+   }
+
+  }
