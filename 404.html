@@ -1,0 +1,12 @@
+<script>
+    var path = window.location.pathname;
+    var redirectTo = '';
+
+    if (path === '/career') redirectTo = '/career.html';
+    else if (path === '/home') redirectTo = '/index.html';
+    else if (path === '/request-services') redirectTo = '/request-services.html';
+
+    if (redirectTo) {
+        window.location.replace(redirectTo);
+    }
+</script>
