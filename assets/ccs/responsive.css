@@ -1,18 +1,70 @@
 @media only screen and (max-width: 991px) {
    .container{
     max-width: 100% !important;
-    padding: 0 70px !important;
+    padding: 0 40px !important;
    }
    .main-services-part {
     padding: 40px;
     background-color: #333F51;
-}
+  }
+  .width-custom-70{
+    width: 80%;
+  }
+
+h1.heading-one{
+  font-family: Poppins;
+  font-size: 42px;
+  font-weight: 600;
+  line-height: 120%;
+  letter-spacing: -0.02em;
+  margin: 0;
+  padding-bottom: 24px;
+  padding-bottom: 15px;
+  }
+  
+  h2.heading-two{
+  
+      font-family: Poppins;
+      font-size: 30px;
+      font-weight: 700;
+      line-height: 44px;
+      letter-spacing: -0.02em;   
+      margin: 0; 
+      padding-bottom: 10px;
+      
+  }
+  h3.heading-three{
+  
+      font-family: Poppins;
+      font-size: 28px;
+      font-weight: 600;
+      line-height: 38px;
+      margin: 0;
+      
+  }
+  h5.heading-five{
+    font-family: Poppins;
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 100%;
+      margin: 0;
+      padding-bottom: 10px;
+  }
+  h6.heading-six{
+    font-family: Poppins;
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 100%;
+      margin: 0;
+      padding-bottom: 5px;
+  }
+  
   }
 @media only screen and (max-width: 767px) {
 
    .container{
     max-width: 100% !important;
-    padding: 0 40px !important;
+    padding: 0 30px !important;
    }
    .custom-flex{
     flex-direction:column;
@@ -22,7 +74,7 @@
     width: 100%;
   }
   .order-rigth{
-    order: 1;
+    order: -1;
   }
 
    .width-custom-70{
@@ -31,7 +83,7 @@
   /* .main-services */
   
    .main-services-part {
-    padding: 30px;
+    padding: 25px;
     background-color: #333F51;
 }
    .main-services-body{
@@ -52,6 +104,10 @@
    .contact-form{
     width: 100%;
    }
+/* Contact Us Section */
+.contact-form-wrapper{
+  width: 100%;
+}
   }
 @media only screen and (max-width: 576px) {
    .container{
