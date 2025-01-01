@@ -58,9 +58,9 @@ h1.heading-one {
   .home-body{
     width: 90%;
   }
-  .home-hero-section{
+  /* .home-hero-section{
     height: 700px;
-  }
+  } */
    /* home-about */
    .about-part {
     padding: 30px;
@@ -160,6 +160,7 @@ h1.heading-one {
    .contact-form{
     width: 100%;
    }
+   
 /* Contact Us Section */
 .contact-form-wrapper{
   width: 100%;
@@ -167,8 +168,15 @@ h1.heading-one {
 
 /* form css  */
 .form-wrapper {
-  padding: 30px;
+  padding: 40px;
   max-width: 100%;
+}
+.input-box-div label {
+  font-size: 16px;
+}
+.input-box-div input, .form-control {
+  font-size: 16px;
+    padding: 10px;
 }
 .input-box-wrapper{
   grid-template-columns: 1fr;
@@ -214,6 +222,7 @@ h1.heading-one {
     /* contact */
     h6.heading-six {
       font-size: 18px;
+      padding: 0;
 
   }
   .body-text{
