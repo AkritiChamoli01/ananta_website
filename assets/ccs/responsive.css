@@ -58,9 +58,9 @@ h1.heading-one {
   .home-body{
     width: 90%;
   }
-  /* .home-hero-section{
+  .home-hero-section{
     height: 700px;
-  } */
+  }
    /* home-about */
    .about-part {
     padding: 30px;
@@ -139,9 +139,9 @@ h1.heading-one {
     width: 100%;
     padding: 0 20px;
   }
-  /* .home-hero-section{
+  .home-hero-section{
     height: 600px;
-  } */
+  }
     /* home-about */
     .about-part {
       padding: 25px;
