@@ -162,6 +162,7 @@ h1.heading-one {
    }
    .submit-button{
     width: 100%;
+    padding: 10px 0;
    }
 /* Contact Us Section */
 .contact-form-wrapper{
