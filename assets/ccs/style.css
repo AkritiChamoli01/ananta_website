@@ -232,11 +232,10 @@ a.nav-link{
   background-image: url('https://akritichamoli01.github.io/ananta_website/assets/images/home-hero-bg.png');
   background-position: bottom;
   background-repeat: no-repeat;
+  position: relative;
   
 }
-.home-hero-section{
-  position: relative;
-}
+
 .home-body{
   position: absolute;
   top: 50%;
@@ -378,13 +377,6 @@ background-color: #ffffff;
 
 /* INDUSTRIEES SECTION START HERE */
 
-/* section.home-hero-section {
-    width: 100%;
-    height: 100%;
-    background-image: url(/assets/images/Hero-bg.svg);
-    background-position: bottom;
-    background-repeat: no-repeat;
-} */
 
 /* Contact Us Section Start Here */
 .contact-section{
