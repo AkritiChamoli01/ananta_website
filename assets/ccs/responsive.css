@@ -225,7 +225,25 @@ h1.heading-one {
   padding: 15px;
   background-color: #333F51;
 }
+}
+@media only screen and (max-width: 500px){
+
+  .footer-top-part, .footer-bottom-part{
+    flex-direction: column;
+    gap: 20px;
+    border: none; 
+   }
+
+  .footer .copyright {
+    order: 2;
   }
+ .footer-nav{
+  gap: 35px;
+ }
+
+
+}
+
   @media only screen and (max-width: 430px){
     /* contact */
     h6.heading-six {
