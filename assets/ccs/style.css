@@ -208,29 +208,31 @@ a.nav-link{
     margin: 0 ;
     font-size: 16px;
   }
-  .footer .social-icons a {
-    margin: 0 10px;
-    font-size: 20px;
-  }
-  .footer .copyright {
-    font-size: 14px;
-    color: #94a3b8;
-  }
   .footer-top-part{
     border-bottom: 1px solid #334155;
     padding-bottom: 20px;
     display: flex;
+    align-items: center;
     justify-content: space-between;
   }
   .footer-bottom-part{
     padding-top: 20px;
     display: flex;
-    justify-content: space-between;
+    gap: 20px;
   }
   .footer-nav{
     display: flex;
     align-items: center;
     gap: 20px;
+  }
+  .footer .social-icons a {
+    font-size: 20px;
+    display: flex;
+    gap: 20px;
+  }
+  .footer .copyright {
+    font-size: 14px;
+    color: #94a3b8;
   }
 
 /* Home Page Start Here */
