@@ -219,6 +219,8 @@ a.nav-link{
   .footer-top-part{
     border-bottom: 1px solid #334155;
     padding-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
   }
   .footer-bottom-part{
     padding-top: 20px;
