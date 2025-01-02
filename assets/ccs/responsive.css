@@ -134,7 +134,7 @@ h1.heading-one {
     width: 100%;
   }
   /* header */
-  phone-nav-wrapper {
+  .phone-nav-wrapper {
     height: 100vh;
     padding-top: 20px;
 }
