@@ -219,14 +219,15 @@ a.nav-link{
     padding-top: 20px;
     display: flex;
     gap: 20px;
+    justify-content: space-between;
+    align-items: center;
   }
   .footer-nav{
     display: flex;
     align-items: center;
     gap: 20px;
   }
-  .footer .social-icons a {
-    font-size: 20px;
+   .social-icons  {
     display: flex;
     gap: 20px;
   }
