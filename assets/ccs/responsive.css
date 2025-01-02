@@ -54,6 +54,16 @@ h1.heading-one {
       margin: 0;
       padding-bottom: 5px;
   }
+  /* header */
+  a.nav-link.active{
+    border: none;
+  
+  }
+  li.nav-item {
+    font-size: 16px;
+    padding: 8px;
+}
+  
   /* home here section */
   .home-body{
     width: 90%;
@@ -123,6 +133,11 @@ h1.heading-one {
    .width-custom-70{
     width: 100%;
   }
+  /* header */
+  phone-nav-wrapper {
+    height: 100vh;
+    padding-top: 20px;
+}
   /* .main-services */
   
    .main-services-part {
