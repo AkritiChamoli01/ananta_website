@@ -224,6 +224,13 @@ a.nav-link{
   }
   .footer-bottom-part{
     padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .footer-nav{
+    display: flex;
+    align-items: center;
+    gap: 20px;
   }
 
 /* Home Page Start Here */
