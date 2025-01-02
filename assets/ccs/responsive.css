@@ -237,9 +237,9 @@ h1.heading-one {
   .footer .copyright {
     order: 2;
   }
- .footer-nav{
-  gap: 35px;
- }
+  .footer-nav{
+  flex-wrap: wrap;
+  }
 
 
 }
