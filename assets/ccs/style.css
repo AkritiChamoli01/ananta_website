@@ -320,7 +320,8 @@ button.hero-btn a{
   text-align: center;
   background-color: #ffffff;
   padding: 40px;
-  margin: 12px;
+  margin: 8px;
+  height: 340px;
 }
 .about-part h3{
     padding: 24px 0 10px 0;
