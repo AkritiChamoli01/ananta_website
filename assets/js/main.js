@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    
     $('.slider-wrapper').slick({
         infinite: true,          // Enables infinite looping
         slidesToShow: 3,         // Number of slides to show at a time (default)
