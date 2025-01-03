@@ -8,7 +8,6 @@
 @media only screen and (max-width: 1023px){
   .about-part{
     height: 300px;
-    padding: 30px;
   }
 
 }
@@ -16,6 +15,9 @@
   .container{
     max-width: 90% !important;
    }
+   .about-part{
+    height: 300px;
+  }
 
 }
 @media only screen and (max-width: 991px) {
@@ -115,6 +117,9 @@ h1.heading-one {
     max-width: 100% !important;
     padding: 0 20px !important;
    }
+   .about-part{
+    height: 340px;
+  }
    .custom-flex{
     flex-direction:column;
     gap: 40px;
@@ -229,6 +234,9 @@ h1.heading-one {
     max-width: 100% !important;
     padding: 0 10px !important;
    }
+   .about-part{
+    height: 320px;
+  }
        /* home here section */
 
   /* home-about */
