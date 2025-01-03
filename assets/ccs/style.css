@@ -164,6 +164,12 @@ margin: 0;
     background-color: #28a745;
     border-bottom: 1px solid #DCFCE7;
 }
+.navbar-toggler:focus {
+  box-shadow: none !important;
+}
+.navbar-toggler{
+  border:  1px solid #ffffff;
+}
 li.nav-item{
     font-size: 18px;
     padding: 8px 15px;
