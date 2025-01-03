@@ -170,6 +170,9 @@ margin: 0;
 .navbar-toggler{
   border:  1px solid #ffffff;
 }
+.navbar-toggler-icon{
+  background-image: url(//assets/images/three-line.svg) !important;
+}
 li.nav-item{
     font-size: 18px;
     padding: 8px 15px;
