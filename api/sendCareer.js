@@ -32,6 +32,9 @@ export default async function handler(req, res) {
 
       const resume = files.resume;
 
+      // Log the uploaded files to check if the resume is received
+      console.log('Uploaded files:', files);
+
       // Create a transporter for nodemailer
       const transporter = nodemailer.createTransport({
         service: 'gmail', // Replace with your email service
@@ -41,9 +44,9 @@ export default async function handler(req, res) {
         },
       });
 
-      // Read the uploaded resume file
+      // Prepare the attachment if the resume exists and has a valid file path
       let attachment;
-      if (resume) {
+      if (resume && resume.filepath) {
         attachment = {
           filename: resume.originalFilename,
           path: resume.filepath,
@@ -65,18 +68,25 @@ export default async function handler(req, res) {
           <p><strong>Job Description:</strong> ${jobDescription}</p>
           <p><strong>Additional Requirements:</strong> ${additionalRequirements}</p>
         `,
-        attachments: attachment ? [attachment] : [],
+        attachments: attachment ? [attachment] : [], // Attach the file only if available
       };
 
       try {
         // Send the email
         await transporter.sendMail(mailOptions);
 
-        // Delete the temporary file after sending email
-        if (resume) {
-          fs.unlinkSync(resume.filepath);
+        // Delete the temporary file after sending the email (if the file exists)
+        if (resume && resume.filepath) {
+          try {
+            fs.unlinkSync(resume.filepath); // Only delete if the file path is defined
+          } catch (deleteError) {
+            console.error('Error deleting file:', deleteError);
+          }
+        } else {
+          console.log('No valid file path for the resume.');
         }
 
+        // Respond with success message
         return res.status(200).json({ message: 'Email sent successfully!' });
       } catch (error) {
         console.error('Error occurred while sending email:', error);
