@@ -2,12 +2,13 @@
     var path = window.location.pathname;
     var redirectTo = '';
 
-    if (path === '/ananta_website/career') redirectTo = '/ananta_website/career.html';
-    else if (path === '/ananta_website/') redirectTo = '/ananta_website/home.html';
-    else if (path === '/ananta_website/home') redirectTo = '/ananta_website/home.html';
-    else if (path === '/ananta_website/request-services') redirectTo = '/ananta_website/request-services.html';
+    if (path === '/career') redirectTo = '/career.html';
+    else if (path === '/' || path === '/home') redirectTo = '/home.html';
+    else if (path === '/request-services') redirectTo = '/request-services.html';
 
     if (redirectTo) {
         window.location.replace(redirectTo);
+    } else {
+        document.write('<h1>404 - Page Not Found</h1><p>The requested page does not exist.</p>');
     }
 </script>
