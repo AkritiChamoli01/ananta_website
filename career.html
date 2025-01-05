@@ -173,6 +173,7 @@
             position: 'right',
             backgroundColor: 'green',
           }).showToast();
+          e.target.reset();
         } else {
           Toastify({
             text: result.error || 'Submission failed. Please check your input.',

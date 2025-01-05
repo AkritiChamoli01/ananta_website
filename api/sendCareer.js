@@ -29,8 +29,9 @@ export default async function handler(req, res) {
 
       const resume = files.resume;
 
-      // Log the uploaded files to check if the resume is received
-      console.log('Uploaded files:', files);
+      // Debugging: Log fields and files to ensure everything is correct
+      console.log('Fields:', fields);
+      console.log('Files:', files);
 
       // Create a transporter for nodemailer
       const transporter = nodemailer.createTransport({
@@ -49,6 +50,9 @@ export default async function handler(req, res) {
           path: resume.filepath,
         };
       }
+
+      // Debugging: Log the attachment data
+      console.log('Attachment:', attachment);
 
       // Set up the email data
       const mailOptions = {
@@ -76,8 +80,6 @@ export default async function handler(req, res) {
           } catch (deleteError) {
             console.error('Error deleting file:', deleteError);
           }
-        } else {
-          console.log('No valid file path for the resume.');
         }
 
         // Respond with success message
