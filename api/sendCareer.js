@@ -20,14 +20,11 @@ export default async function handler(req, res) {
       }
 
       const {
-        companyName,
-        contactPerson,
-        phone,
+        name,
         email,
-        jobTitle,
-        positions,
-        jobDescription,
-        additionalRequirements,
+        phone,
+        address,
+        message
       } = fields;
 
       const resume = files.resume;
@@ -59,14 +56,11 @@ export default async function handler(req, res) {
         to: 'anantamanpowerservices@gmail.com', // Replace with your recipient email address
         subject: 'New Career Form Submission',
         html: `
-          <p><strong>Company Name:</strong> ${companyName}</p>
-          <p><strong>Contact Person:</strong> ${contactPerson}</p>
-          <p><strong>Phone:</strong> ${phone}</p>
+          <p><strong>Name:</strong> ${name}</p>
           <p><strong>Email:</strong> ${email}</p>
-          <p><strong>Job Title:</strong> ${jobTitle}</p>
-          <p><strong>Number of Positions:</strong> ${positions}</p>
-          <p><strong>Job Description:</strong> ${jobDescription}</p>
-          <p><strong>Additional Requirements:</strong> ${additionalRequirements}</p>
+          <p><strong>Phone:</strong> ${phone}</p>
+          <p><strong>Address:</strong> ${address}</p>
+          <p><strong>Message:</strong> ${message}</p>
         `,
         attachments: attachment ? [attachment] : [], // Attach the file only if available
       };
