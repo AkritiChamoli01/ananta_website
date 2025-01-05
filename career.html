@@ -6,17 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <!-- bootstrap Links Here -->
-  <link rel="stylesheet"
-    href="/bootstrap-5.3.3-dist/css/bootstrap-grid.min.css">
-  <link rel="stylesheet"
-    href="/bootstrap-5.3.3-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/bootstrap-5.3.3-dist/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="/bootstrap-5.3.3-dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="/bootstrap-5.3.3-dist/js/bootstrap.js">
-  <link rel="stylesheet"
-    href="/bootstrap-5.3.3-dist/js/bootstrap.min.js">
+  <link rel="stylesheet" href="/bootstrap-5.3.3-dist/js/bootstrap.min.js">
 
   <!-- custom links Here  -->
   <link rel="stylesheet" href="/assets/ccs/style.css">
   <link rel="stylesheet" href="/assets/ccs/responsive.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
 </head>
 
@@ -62,36 +61,36 @@
   <section class="career-section">
     <div class="container">
       <div class="form-wrapper">
-        <form class="career-form-wrapper">
+        <form class="career-form-wrapper" id="careerForm" enctype="multipart/form-data">
           <div class="input-box-div">
             <div class="input-box-wrapper">
               <div class="form-input-box">
-                <label for="name" class="form-label">Your Name</label>
-                <input type="text" class="form-control" id="name" placeholder="Enter Name">
+                <label for="name" class="form-label">*Your Name</label>
+                <input type="text" class="form-control" name="name" placeholder="Enter Name" required>
               </div>
               <div class="form-input-box">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" placeholder="Enter Email">
+                <label for="email" class="form-label">*Email</label>
+                <input type="email" class="form-control" name="email" placeholder="Enter Email" required>
               </div>
               <div class="form-input-box">
-                <label for="phone" class="form-label">Phone No.</label>
-                <input type="tel" class="form-control" id="phone" placeholder="Enter Phone No.">
+                <label for="phone" class="form-label">*Phone No.</label>
+                <input type="tel" class="form-control" name="phone" placeholder="Enter Phone No." required>
               </div>
               <div class="form-input-box">
-                <label for="address" class="form-label">Address</label>
-                <input type="text" class="form-control" id="address" placeholder="Enter Address">
+                <label for="address" class="form-label">*Address</label>
+                <input type="text" class="form-control" name="address" placeholder="Enter Address" required>
               </div>
             </div>
           </div>
 
           <div class="input-box-div">
-            <label for="resume" class="form-label">Upload Document</label>
-            <input type="file" class="form-control" id="resume">
+            <label for="resume" class="form-label">*Upload Document</label>
+            <input type="file" class="form-control" name="resume" accept=".pdf,.doc,.docx" required>
           </div>
 
           <div class="input-box-div">
             <label for="message" class="form-label">Message</label>
-            <textarea class="form-control" id="message" rows="4" placeholder="Enter Message Here..."></textarea>
+            <textarea class="form-control" name="message" rows="4" placeholder="Enter Message Here..."></textarea>
           </div>
 
           <div class="input-box-div">
@@ -127,20 +126,73 @@
         </div>
         <!-- Social Media Icons -->
         <div class="social-icons">
-          <a href="#"><img src="/assets/images/Facebook.svg"
-              alt=""></i></a>
-          <a href="#"><img src="/assets/images/LinkedIn.svg"
-              alt=""></i></a>
-          <a href="#"><img src="/assets/images/Instagram.svg"
-              alt=""></i></a>
-          <a href="#"><img src="/assets/images/Twitter.svg"
-              alt=""></i></a>
+          <a href="#"><img src="/assets/images/Facebook.svg" alt=""></i></a>
+          <a href="#"><img src="/assets/images/LinkedIn.svg" alt=""></i></a>
+          <a href="#"><img src="/assets/images/Instagram.svg" alt=""></i></a>
+          <a href="#"><img src="/assets/images/Twitter.svg" alt=""></i></a>
         </div>
       </div>
   </footer>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+
+    document.getElementById('careerForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(e.target);
+      const fileInput = document.querySelector('input[name="resume"]');
+
+      // Validate file size (max 2MB)
+      if (fileInput.files.length > 0 && fileInput.files[0].size > 2 * 1024 * 1024) {
+        Toastify({
+          text: 'File size exceeds 2 MB. Please upload a smaller file.',
+          duration: 3000,
+          gravity: 'top',
+          position: 'right',
+          backgroundColor: 'red',
+        }).showToast();
+        return;
+      }
+
+      try {
+        const response = await fetch('/api/sendCareer', {
+          method: 'POST',
+          body: formData,
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+          Toastify({
+            text: result.message || 'Form submitted successfully!',
+            duration: 3000,
+            gravity: 'top',
+            position: 'right',
+            backgroundColor: 'green',
+          }).showToast();
+        } else {
+          Toastify({
+            text: result.error || 'Submission failed. Please check your input.',
+            duration: 3000,
+            gravity: 'top',
+            position: 'right',
+            backgroundColor: 'red',
+          }).showToast();
+        }
+      } catch (error) {
+        Toastify({
+          text: 'Failed to connect to the server. Please try again later.',
+          duration: 3000,
+          gravity: 'top',
+          position: 'right',
+          backgroundColor: 'red',
+        }).showToast();
+      }
+    });
+
+
   </script>
   <script src="/bootstrap-5.3.3-dist/js/bootstrap.min.js"></script>
 

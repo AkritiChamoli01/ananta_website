@@ -20,7 +20,12 @@ export default async function handler(req, res) {
       from: process.env.EMAIL_USER_VALUE,
       to: 'anantamanpowerservices@gmail.com', // Replace with your recipient email address
       subject: 'Contact Form Submission',
-      text: `Name: ${name}\nPhone: ${phone}\nEmail: ${email}\nMessage: ${message}`,
+      html: `
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Phone:</strong> ${phone}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Message:</strong> ${message}</p>
+      `,
     };
 
     try {

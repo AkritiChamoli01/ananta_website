@@ -155,11 +155,6 @@
             const formData = new FormData(e.target);
             const data = Object.fromEntries(formData.entries());
 
-
-            console.log("process.env.EMAIL_USER", process.env.EMAIL_USER);
-            console.log("process.env.EMAIL_PASS", process.env.EMAIL_PASS);
-            
-
             try {
                 // Make POST request to the API
                 const response = await fetch('/api/sendEmail', {
