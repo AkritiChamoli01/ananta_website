@@ -63,54 +63,49 @@
     <section class="career-section">
         <div class="container">
             <div class="form-wrapper">
-                <form class="career-form-wrapper">
-                    <div class="input-box-div">
-                        <div class="input-box-wrapper">
-                            <div class="form-input-box">
-                                <label for="company" class="form-label">*Company Name</label>
-                                <input type="text" class="form-control" id="name" placeholder="Enter Company Name" required>
-                            </div>
-                            <div class="form-input-box">
-                                <label for="contact-person" class="form-label">*Contact Person</label>
-                                <input type="text" class="form-control" id="name" placeholder="Enter Contact Person">
-                            </div>
-                            <div class="form-input-box">
-                                <label for="phone" class="form-label">*Phone No.</label>
-                                <input type="tel" class="form-control" id="phone" placeholder="Enter Phone No.">
-                            </div>
-                            <div class="form-input-box">
-                                <label for="email" class="form-label">*Email</label>
-                                <input type="email" class="form-control" id="email" placeholder="Enter Email">
-                            </div>
-
-                            <div class="form-input-box">
-                                <label for="job-title" class="form-label">*Job Title</label>
-                                <input type="text" class="form-control" id="job-title" placeholder="Enter Job Title">
-                            </div>
-                            <div class="form-input-box">
-                                <label for="positions" class="form-label">*Number of Positions</label>
-                                <input type="number" class="form-control" id="positions"
-                                    placeholder="Enter Number of Positions">
-                            </div>
-                        </div>
+                <form class="career-form-wrapper" action="/api/sendEmail" method="POST">
+                    <div class="input-box-wrapper">
+                      <div class="form-input-box">
+                        <label for="company" class="form-label">*Company Name</label>
+                        <input type="text" name="companyName" class="form-control" placeholder="Enter Company Name" required>
+                      </div>
+                      <div class="form-input-box">
+                        <label for="contact-person" class="form-label">*Contact Person</label>
+                        <input type="text" name="contactPerson" class="form-control" placeholder="Enter Contact Person">
+                      </div>
+                      <div class="form-input-box">
+                        <label for="phone" class="form-label">*Phone No.</label>
+                        <input type="tel" name="phone" class="form-control" placeholder="Enter Phone No.">
+                      </div>
+                      <div class="form-input-box">
+                        <label for="email" class="form-label">*Email</label>
+                        <input type="email" name="email" class="form-control" placeholder="Enter Email">
+                      </div>
+                  
+                      <div class="form-input-box">
+                        <label for="job-title" class="form-label">*Job Title</label>
+                        <input type="text" name="jobTitle" class="form-control" placeholder="Enter Job Title">
+                      </div>
+                      <div class="form-input-box">
+                        <label for="positions" class="form-label">*Number of Positions</label>
+                        <input type="number" name="positions" class="form-control" placeholder="Enter Number of Positions">
+                      </div>
                     </div>
-
-
+                  
                     <div class="input-box-div">
-                        <label for="job-description" class="form-label">Job Description</label>
-                        <textarea class="form-control" id="job-description" rows="4"
-                            placeholder="Enter Job Description..."></textarea>
+                      <label for="job-description" class="form-label">Job Description</label>
+                      <textarea name="jobDescription" class="form-control" rows="4" placeholder="Enter Job Description..."></textarea>
                     </div>
                     <div class="input-box-div">
-                        <label for="additional-requirements" class="form-label">Additional Requirements (if any)</label>
-                        <textarea class="form-control" id="additional-requirements" rows="4"
-                            placeholder="Enter Additional Requirements..."></textarea>
+                      <label for="additional-requirements" class="form-label">Additional Requirements (if any)</label>
+                      <textarea name="additionalRequirements" class="form-control" rows="4" placeholder="Enter Additional Requirements..."></textarea>
                     </div>
-
+                  
                     <div class="input-box-div">
-                        <button type="submit" class="submit-button">Submit</button>
+                      <button type="submit" class="submit-button">Submit</button>
                     </div>
-                </form>
+                  </form>
+                  
             </div>
         </div>
     </section>
