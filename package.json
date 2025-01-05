@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/AkritiChamoli01/ananta_website#readme",
   "dependencies": {
+    "formidable": "^3.5.2",
     "nodemailer": "^6.9.16"
   }
 }
