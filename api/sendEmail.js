@@ -10,14 +10,14 @@ export default async function handler(req, res) {
     const transporter = nodemailer.createTransport({
       service: 'gmail',  // Replace with your email service (Gmail, Yahoo, etc.)
       auth: {
-        user: process.env.EMAIL_USER,  // Your email (set as an environment variable)
-        pass: process.env.EMAIL_PASS,  // Your email password (set as an environment variable or use an App Password)
+        user: process.env.EMAIL_USER_VALUE,  // Your email (set as an environment variable)
+        pass: process.env.EMAIL_PASS_VALUE,  // Your email password (set as an environment variable or use an App Password)
       },
     });
 
     // Set up the email data
     const mailOptions = {
-      from: process.env.EMAIL_USER,
+      from: process.env.EMAIL_USER_VALUE,
       to: 'anantamanpowerservices@gmail.com', // Replace with your recipient email address
       subject: 'New Request Service Form Submission',
       text: `Company Name: ${companyName}\nContact Person: ${contactPerson}\nPhone: ${phone}\nEmail: ${email}\nJob Title: ${jobTitle}\nNumber of Positions: ${positions}\nJob Description: ${jobDescription}\nAdditional Requirements: ${additionalRequirements}`,
