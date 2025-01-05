@@ -27,11 +27,24 @@ export default async function handler(req, res) {
         message
       } = fields;
 
-      const resume = files.resume;
-
-      // Debugging: Log fields and files to ensure everything is correct
-      console.log('Fields:', fields);
+      // Debugging: Log the entire `files` object to understand its structure
       console.log('Files:', files);
+
+      // Access the resume file (assuming it's an array, check its structure first)
+      const resume = Array.isArray(files.resume) ? files.resume[0] : files.resume;
+      console.log('Resume:', resume);
+
+      // If resume file exists and has a valid file path, prepare attachment
+      let attachment;
+      if (resume && resume.filepath) {
+        attachment = {
+          filename: resume.originalFilename,
+          path: resume.filepath,
+        };
+      }
+
+      // Debugging: Log attachment details
+      console.log('Attachment:', attachment);
 
       // Create a transporter for nodemailer
       const transporter = nodemailer.createTransport({
@@ -41,18 +54,6 @@ export default async function handler(req, res) {
           pass: process.env.EMAIL_PASS_VALUE, // Your email password (set as an environment variable or use an App Password)
         },
       });
-
-      // Prepare the attachment if the resume exists and has a valid file path
-      let attachment;
-      if (resume && resume.filepath) {
-        attachment = {
-          filename: resume.originalFilename,
-          path: resume.filepath,
-        };
-      }
-
-      // Debugging: Log the attachment data
-      console.log('Attachment:', attachment);
 
       // Set up the email data
       const mailOptions = {
