@@ -85,7 +85,8 @@
 
           <div class="input-box-div">
             <label for="resume" class="form-label">*Upload Document</label>
-            <input type="file" class="form-control" name="resume" accept=".pdf,.doc,.docx" required>
+            <input type="file" class="form-control" name="resume" accept=".doc,.docx,.txt" required>
+            <small class="file-types-info">(Allowed file types: .doc, .docx, .txt)</small>
           </div>
 
           <div class="input-box-div">
@@ -145,9 +146,9 @@
       const fileInput = document.querySelector('input[name="resume"]');
 
       // Validate file size (max 2MB)
-      if (fileInput.files.length > 0 && fileInput.files[0].size > 2 * 1024 * 1024) {
+      if (fileInput.files.length > 0 && fileInput.files[0].size > 20 * 1024 * 1024) {
         Toastify({
-          text: 'File size exceeds 2 MB. Please upload a smaller file.',
+          text: 'File size exceeds 20 MB. Please upload a smaller file.',
           duration: 3000,
           gravity: 'top',
           position: 'right',
