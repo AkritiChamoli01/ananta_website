@@ -18,7 +18,7 @@ export default async function handler(req, res) {
     // Set up the email data
     const mailOptions = {
       from: process.env.EMAIL_USER_VALUE,
-      to: 'info@anantamanpower.in', // Replace with your recipient email address
+      to: 'info@anantamentors.in', // Replace with your recipient email address
       subject: 'New Request Service Form Submission',
       html: `
       <p><strong>Company Name:</strong> ${companyName}</p>
